@@ -13,11 +13,18 @@ function MainSection() {
 
     const page = mainPage[0] // just grab the first row
 
+    const graphicSrc =
+        typeof page?.graphic === "string"
+            ? page.graphic
+            : page?.graphic?.data
+                ? String.fromCharCode(...page.graphic.data)
+                : null
+
     return (
         <div className="flex flex-col md:flex-row gap-4 w-full px-8 mt-8">
 
 
-            <div className="flex-1 min-h-64 bg-neutral-700 rounded-md p-6">
+            <div className="flex-1 min-h-64 bg-slate-800 rounded-md p-6 border border-slate-700 shadow-lg">
                 <div className="block">
                     <h1 className="font-bold text-4xl">{page?.title ?? "..."}</h1>
                     <h2 className="font-medium text-2xl">{page?.subtitle ?? "..."}</h2>
@@ -29,7 +36,14 @@ function MainSection() {
             </div>
 
 
-            <div className="w-full md:w-100 min-h-32 bg-neutral-500 rounded-md p-4">
+            <div className="w-full md:w-100 min-h-32 bg-slate-700 rounded-md p-4 flex items-center justify-center overflow-hidden border border-slate-600 shadow-lg">
+                {graphicSrc && (
+                    <img
+                        src={graphicSrc}
+                        alt={page?.title ?? ""}
+                        className="max-w-full max-h-full object-contain"
+                    />
+                )}
             </div>
 
         </div>

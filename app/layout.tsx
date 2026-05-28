@@ -20,8 +20,8 @@ export const metadata: Metadata = {
 function NavButton1({label, href}: { label: string; href: string }) {
     return (
         <a href={href}>
-            <button className="w-40 h-11 bg-neutral-800 mt-1 mb-1 mr-auto ml-1 rounded-md border-2">
-                <p className="text-red-600 font-bold">{label}</p>
+            <button className="w-40 h-11 bg-slate-800 mt-1 mb-1 mr-auto ml-1 rounded-md border-2 border-slate-700 hover:bg-slate-700 hover:border-amber-300 transition-colors">
+                <p className="text-amber-300 font-bold">{label}</p>
             </button>
         </a>
     )
@@ -51,7 +51,7 @@ function NavBar({className}: { className: string }) {
 function Footer({className}: { className: string }) {
     return (
         <footer className={className}>
-            <p className="text-center align-text-bottom text-red-600 mt-19">wagntzm</p>
+            <p className="text-center align-text-bottom text-amber-300 mt-19">wagntzm</p>
         </footer>
     )
 }
@@ -60,9 +60,9 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
     return (
         <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
         <body className="min-h-full flex flex-col">
-        <NavBar className="w-full h-13 bg-neutral-900 flex flex-row items-center"/>
+        <NavBar className="w-full h-13 bg-slate-900 flex flex-row items-center border-b border-slate-800"/>
         <main>{children}</main>
-        <Footer className="w-full h-26 bg-neutral-900 mt-auto"/>
+        <Footer className="w-full h-26 bg-slate-900 mt-auto border-t border-slate-800"/>
         </body>
         </html>
     )
