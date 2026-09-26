@@ -1,1 +1,0 @@
-Website that allows you to share your thoughts on music (Albums, singles, etc.), allows you to track music you've already listened to and suggests new music based on your preferences. Tracks your music statistics.
